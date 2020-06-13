@@ -1,0 +1,3 @@
+﻿https://stackoverflow.com/questions/6006618/how-to-draw-a-rectangle-in-console-application
+
+https://docs.microsoft.com/en-us/windows/console/console-screen-buffers

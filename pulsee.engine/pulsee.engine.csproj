@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1330FCFC-4F1A-4E77-B402-0F83ABC3B6AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>pulsee.engine</RootNamespace>
+    <AssemblyName>pulsee.engine</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Config\DTO\ConfigConfigDTO.cs" />
+    <Compile Include="Config\Utils\ConfigFileFinder.cs" />
+    <Compile Include="Config\ConfigManager.cs" />
+    <Compile Include="Config\DTO\EngineConfigDTO.cs" />
+    <Compile Include="Config\DTO\WindowConfigDTO.cs" />
+    <Compile Include="Config\Serialization\ConfigFileFormatContext.cs" />
+    <Compile Include="Config\DTO\ConfigDTO.cs" />
+    <Compile Include="Config\Contracts\IConfigFileFormatStrategy.cs" />
+    <Compile Include="Config\FileFormatStrategies\JSONFormatStrategy.cs" />
+    <Compile Include="Config\FileFormatStrategies\XMLFormatStrategy.cs" />
+    <Compile Include="Config\Serialization\ConfigDeserializer.cs" />
+    <Compile Include="Config\Serialization\ConfigSerializer.cs" />
+    <Compile Include="Config\Utils\ExtensionPicker.cs" />
+    <Compile Include="Config\Utils\FormatSelector.cs" />
+    <Compile Include="GameContainer.cs" />
+    <Compile Include="Events\Contracts\IEventListener.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Math\Geometry\Point.cs" />
+    <Compile Include="Math\Generation\Random.cs" />
+    <Compile Include="Pulsee.cs" />
+    <Compile Include="Utils\FileInfo.cs" />
+    <Compile Include="Utils\FileReader.cs" />
+    <Compile Include="Utils\Info.cs" />
+    <Compile Include="Utils\ListFinder.cs" />
+    <Compile Include="Utils\Reflexion.cs" />
+    <Compile Include="Utils\xConsole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Assets\Defaults\default.config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Render\resources.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

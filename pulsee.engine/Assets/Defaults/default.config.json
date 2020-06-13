@@ -1,0 +1,15 @@
+{
+    "config": {
+        "ext_priority": [ "json", "xml" ]
+    },
+    "window": {
+        "height": 800,
+        "width": 600,
+        "title": "Pulse-e 1D"
+    },
+    "engine": {
+        "physic_tick": 120,
+        "graphic_tick": 60,
+        "clock_speed": 1
+    }
+}
