@@ -25,6 +25,9 @@ namespace pulsee.engine.Config
         {
             List<string> fileNames = FindConfigFiles();
 
+            if (fileNames.Count == 0)
+                return null;
+
             int elementIdx = ExtensionPicker.GetHigherPriorityExtenstionIndex(fileNames);
 
             return ListFinder.FindElementFromRegex(fileNames, string.Format(@".*\.{0}", GameContainer.configManager.loadedConfig.Config.ExtensionsPriority[elementIdx]));

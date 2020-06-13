@@ -29,19 +29,25 @@ namespace pulsee.engine.Config
             configDeserializer.AssingConfigFileFormatStrategy(new JSONFormatStrategy());
             loadedConfig = configDeserializer.LoadConfig(Info.ProjectDirectory + @"Assets\Defaults\default.config.json");
 
-            xConsole.WriteLine("Default config loaded", MessageType.Info);
+            xConsole.WriteLine("Default config loaded.", MessageType.Info);
 
-            xConsole.WriteLine("Loading user config", MessageType.Info);
+            xConsole.WriteLine("Loading user config.", MessageType.Info);
 
+            //loading user config if any
             string userConfigName = ConfigFileFinder.GetConfigFile();
+
+            if (userConfigName == null)
+            {
+                xConsole.WriteLine("No custom config found.", MessageType.Info);
+                return;
+            }
+
             IConfigFileFormatStrategy userConfigStrategy = FormatSelector.GetFileFormatStrategyFromFileName(userConfigName);
 
             configDeserializer.AssingConfigFileFormatStrategy(userConfigStrategy);
             loadedConfig = configDeserializer.LoadConfig(userConfigName);
 
-            xConsole.WriteLine(string.Format("{1} strat used\n{0} loaded", userConfigName, userConfigStrategy.ToString()), MessageType.Info);
-
-            xConsole.WriteLine(string.Format("width:{0}\ntitle:{1}", loadedConfig.Window.Width, loadedConfig.Window.Title));
+            xConsole.WriteLine(string.Format("{0} loaded", userConfigName), MessageType.Info);
 
             return;
         }
