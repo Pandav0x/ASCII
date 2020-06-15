@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using pulsee.engine.Events.Contracts;
 using pulsee.engine.Utils;
 
@@ -6,6 +6,7 @@ namespace pulsee.engine.Events
 {
     class EventManager
     {
+        //try to use delegates
         private Dictionary<string, List<IEventListener>> listeners;
 
         public EventManager()
