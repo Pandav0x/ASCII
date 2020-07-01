@@ -7,6 +7,8 @@ namespace pulsee.engine
         public static void Main()
         {
             GameContainer.Boot();
+            GameContainer.Run();
+            GameContainer.Halt();
             xConsole.ReadLine();
         }
     }

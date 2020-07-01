@@ -1,4 +1,5 @@
-﻿using pulsee.engine.Config.Contracts;
+﻿using System;
+using pulsee.engine.Config.Contracts;
 using pulsee.engine.Config.DTO;
 using pulsee.engine.Config.FileFormatStrategies;
 using pulsee.engine.Config.Serialization;
@@ -7,7 +8,7 @@ using pulsee.engine.Utils;
 
 namespace pulsee.engine.Config
 {
-    class ConfigManager
+    class ConfigManager: Manager
     {
         public ConfigDTO loadedConfig { get; internal set; }
 

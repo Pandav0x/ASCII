@@ -1,5 +1,7 @@
 ﻿using pulsee.engine.Config;
 using pulsee.engine.Events;
+using pulsee.engine.Game;
+
 using System;
 
 namespace pulsee.engine
@@ -10,23 +12,38 @@ namespace pulsee.engine
 
         public static EventManager eventManager { get; internal set; }
 
+        public static MainLoop mainLoop { get; internal set; }
+
         public static void Boot()
         {
             configManager = new ConfigManager();
             eventManager = new EventManager();
 
+            mainLoop = new MainLoop();
+
             Initialize();
         }
 
-        public static void Initialize()
+        public static void Halt()
+        {
+            Terminate();
+        }
+
+        public static void Run()
+        {
+            mainLoop.Run();
+        }
+
+        private static void Initialize()
         {
             configManager.LoadConfig();
             eventManager.Initialize();
         }
 
-        public static void Run()
+        private static void Terminate()
         {
-            throw new NotImplementedException("ouais nan mais la chui en train de faire autre chose en fait");
+            configManager.Dispose();
+            eventManager.Dispose();
         }
     }
 }

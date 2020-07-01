@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using pulsee.engine.Events.Contracts;
 using pulsee.engine.Utils;
 
 namespace pulsee.engine.Events
 {
-    class EventManager
+    class EventManager: Manager
     {
         private Dictionary<string, List<IEventListener>> listeners;
 
@@ -42,8 +43,10 @@ namespace pulsee.engine.Events
 
         public void FireEvent(string eventName)
         {
-            if (listeners.ContainsKey(eventName)) {
-                foreach (IEventListener listener in listeners[eventName]) { 
+            if (listeners.ContainsKey(eventName))
+            {
+                foreach (IEventListener listener in listeners[eventName])
+                {
                     listener.Notify();
                 }
             }

@@ -52,6 +52,7 @@
     <Compile Include="GameContainer.cs" />
     <Compile Include="Events\Contracts\IEventListener.cs" />
     <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Game\MainLoop.cs" />
     <Compile Include="Math\Geometry\Point.cs" />
     <Compile Include="Math\Generation\Random.cs" />
     <Compile Include="Pulsee.cs" />
