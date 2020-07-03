@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace pulsee.engine.Math.Geometry
+﻿namespace pulsee.engine.Math.Geometry
 {
     class Point
     {
