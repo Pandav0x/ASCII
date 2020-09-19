@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Config\DTO\ConfigConfigDTO.cs" />
+    <Compile Include="Config\DTO\RenderConfigDTO.cs" />
     <Compile Include="Config\Utils\ConfigFileFinder.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\DTO\EngineConfigDTO.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Events\Contracts\IEventListener.cs" />
     <Compile Include="Events\EventManager.cs" />
     <Compile Include="Game\MainLoop.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="Math\Geometry\Point.cs" />
     <Compile Include="Math\Generation\Random.cs" />
     <Compile Include="Pulsee.cs" />
@@ -84,6 +86,8 @@
   <ItemGroup>
     <Content Include="Render\resources.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Workers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
