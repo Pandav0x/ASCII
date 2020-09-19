@@ -52,4 +52,3 @@ namespace pulsee.engine.Config.DTO
             internal set => _clockSpeed = value;
         }
     }
-}

@@ -1,5 +1,4 @@
-﻿using System;
-using pulsee.engine.Config.Contracts;
+﻿using pulsee.engine.Config.Contracts;
 using pulsee.engine.Config.DTO;
 using pulsee.engine.Config.FileFormatStrategies;
 using pulsee.engine.Config.Serialization;

@@ -8,8 +8,11 @@
         "title": "Pulse-e 1D"
     },
     "engine": {
-        "physic_tick": 120,
-        "graphic_tick": 60,
+        "physic_tick": 60,
+        "graphic_tick": 120,
         "clock_speed": 1
+    },
+    "render": {
+        "max_fps": 60
     }
 }

@@ -10,11 +10,13 @@ namespace pulsee.engine.Config.DTO
         public ConfigDTO(
             [JsonProperty("config")] ConfigConfigDTO configConfig = null,
             [JsonProperty("window")] WindowConfigDTO windowConfig = null,
-            [JsonProperty("engine")] EngineConfigDTO engineConfig = null
+            [JsonProperty("engine")] EngineConfigDTO engineConfig = null,
+            [JsonProperty("render")] RenderConfigDTO renderConfig = null
         ) {
             Config = configConfig ?? new ConfigConfigDTO(GameContainer.configManager.loadedConfig.Config);
             Window = windowConfig ?? new WindowConfigDTO(GameContainer.configManager.loadedConfig.Window);
             Engine = engineConfig ?? new EngineConfigDTO(GameContainer.configManager.loadedConfig.Engine);
+            Render = renderConfig ?? new RenderConfigDTO(GameContainer.configManager.loadedConfig.Render);
         }
 
         private ConfigConfigDTO _config;
@@ -42,6 +44,15 @@ namespace pulsee.engine.Config.DTO
         { 
             get => _engine; 
             internal set => _engine = value; 
+        }
+
+        private RenderConfigDTO _render;
+
+        [JsonProperty("render")]
+        public RenderConfigDTO Render
+        {
+            get => _render;
+            internal set => _render = value;
         }
     }
 }
