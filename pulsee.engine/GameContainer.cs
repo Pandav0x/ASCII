@@ -2,8 +2,6 @@
 using pulsee.engine.Events;
 using pulsee.engine.Game;
 
-using System;
-
 namespace pulsee.engine
 {
     static class GameContainer
