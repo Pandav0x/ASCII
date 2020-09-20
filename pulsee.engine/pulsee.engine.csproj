@@ -86,8 +86,6 @@
   <ItemGroup>
     <Content Include="Render\resources.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Workers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
