@@ -10,7 +10,7 @@ namespace pulsee.engine.Game
     {
         private bool isLooping;
 
-        const int MS_PER_UPDATE = 50;
+        const int MS_PER_UPDATE = 20;
 
         public bool IsLooping
         {
@@ -18,20 +18,20 @@ namespace pulsee.engine.Game
             set { isLooping = value; }
         }
 
-        public MainLoop() 
+        public MainLoop()
         {
             IsLooping = true;
         }
 
         public void Run()
         {
-            double previous = GetEpoch();
+            double previous = Time.GetEpochMilliseconds();
 
             double lag = 0.0d;
 
             do
             {
-                double current = GetEpoch();
+                double current = Time.GetEpochMilliseconds();
                 double elapsed = current - previous;
 
                 previous = current;
@@ -49,11 +49,6 @@ namespace pulsee.engine.Game
 
             } while (isLooping);
             return;
-        }
-
-        public long GetEpoch()
-        {
-            return (DateTimeOffset.UtcNow).ToUnixTimeMilliseconds();
         }
 
         public void ProcessInput() 
