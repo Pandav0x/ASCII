@@ -9,48 +9,36 @@ namespace pulsee.engine.Config.DTO
 
         [JsonConstructor]
         public EngineConfigDTO(
-            [JsonProperty("physic_tick")] float? physicRefreshRate_ = null,
-            [JsonProperty("graphic_tick")] float? graphicRefreshRate_ = null,
-            [JsonProperty("clock_speed")] float? clockSpeed_ = null
+            [JsonProperty("ms_per_update")] int? msPerUpdate_ = null,
+            [JsonProperty("max_fps")] int? maxFPS_ = null
         )
         {
-            PhysicRefreshRate = physicRefreshRate_ ?? GameContainer.configManager.loadedConfig.Engine.PhysicRefreshRate;
-            GraphicRefreshRate = graphicRefreshRate_ ?? GameContainer.configManager.loadedConfig.Engine.GraphicRefreshRate;
-            ClockSpeed = clockSpeed_ ?? GameContainer.configManager.loadedConfig.Engine.ClockSpeed;
+            MsPerUpdate = msPerUpdate_ ?? GameContainer.configManager.loadedConfig.Engine.MsPerUpdate;
+            MaxFPS = maxFPS_ ?? GameContainer.configManager.loadedConfig.Engine.MaxFPS;
         }
 
         public EngineConfigDTO(EngineConfigDTO engineConfig)
         {
-            PhysicRefreshRate = engineConfig.PhysicRefreshRate;
-            GraphicRefreshRate = engineConfig.GraphicRefreshRate;
-            ClockSpeed = engineConfig.ClockSpeed;
+            MsPerUpdate = engineConfig.MsPerUpdate;
+            MaxFPS = engineConfig.MaxFPS;
         }
 
-        private float? _physicRefreshRate;
+        private int? _msPerUpdate;
 
-        [JsonProperty("physic_tick")]
-        public float? PhysicRefreshRate
+        [JsonProperty("ms_per_update")]
+        public int? MsPerUpdate
         {
-            get => _physicRefreshRate;
-            internal set => _physicRefreshRate = value;
+            get => _msPerUpdate;
+            internal set => _msPerUpdate = value;
         }
 
-        private float? _graphicRefreshRate;
+        private float? _maxFPS;
 
-        [JsonProperty("graphic_tick")]
-        public float? GraphicRefreshRate
+        [JsonProperty("max_fps")]
+        public float? MaxFPS
         {
-            get => _graphicRefreshRate;
-            internal set => _graphicRefreshRate = value;
-        }
-
-        private float? _clockSpeed;
-
-        [JsonProperty("clock_speed")]
-        public float? ClockSpeed
-        {
-            get => _clockSpeed;
-            internal set => _clockSpeed = value;
+            get => _maxFPS;
+            internal set => _maxFPS = value;
         }
     }
 }

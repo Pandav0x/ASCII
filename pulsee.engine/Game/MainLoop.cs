@@ -10,7 +10,7 @@ namespace pulsee.engine.Game
     {
         private bool isLooping;
 
-        const int MS_PER_UPDATE = 20;
+        private readonly int msPerUpdate;
 
         public bool IsLooping
         {
@@ -21,6 +21,7 @@ namespace pulsee.engine.Game
         public MainLoop()
         {
             IsLooping = true;
+            msPerUpdate = (int)GameContainer.configManager.loadedConfig.Engine.MsPerUpdate;
         }
 
         public void Run()
@@ -39,13 +40,13 @@ namespace pulsee.engine.Game
 
                 ProcessInput();
 
-                while (lag >= MS_PER_UPDATE)
+                while (lag >= msPerUpdate)
                 {
                     Update();
-                    lag -= MS_PER_UPDATE;
+                    lag -= msPerUpdate;
                 }
 
-                Render();
+                Render(); //TODO - clamp Render to MAX_FPS in config
 
             } while (isLooping);
             return;
@@ -65,7 +66,6 @@ namespace pulsee.engine.Game
         public void Render() 
         {
             xConsole.Write(".", MessageType.Warning);
-            Thread.Sleep(120);
             //TODO - just a dummy method for a reference in main loop
         }
     }

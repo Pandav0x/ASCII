@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Config\DTO\ConfigConfigDTO.cs" />
-    <Compile Include="Config\DTO\RenderConfigDTO.cs" />
     <Compile Include="Config\Utils\ConfigFileFinder.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\DTO\EngineConfigDTO.cs" />
@@ -63,6 +62,7 @@
     <Compile Include="Utils\Info.cs" />
     <Compile Include="Utils\ListFinder.cs" />
     <Compile Include="Utils\Reflexion.cs" />
+    <Compile Include="Utils\Time.cs" />
     <Compile Include="Utils\xConsole.cs" />
   </ItemGroup>
   <ItemGroup>

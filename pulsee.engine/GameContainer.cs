@@ -17,9 +17,9 @@ namespace pulsee.engine
             configManager = new ConfigManager();
             eventManager = new EventManager();
 
-            mainLoop = new MainLoop();
-
             Initialize();
+
+            mainLoop = new MainLoop();
         }
 
         public static void Halt()
