@@ -3,7 +3,7 @@ using pulsee.engine.Utils;
 
 namespace pulsee.engine.Config.DTO
 {
-    class EngineConfigDTO
+    public class EngineConfigDTO
     {
         public EngineConfigDTO() { }
 

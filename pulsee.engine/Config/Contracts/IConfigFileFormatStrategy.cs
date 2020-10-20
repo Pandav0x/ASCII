@@ -2,7 +2,7 @@
 
 namespace pulsee.engine.Config.Contracts
 {
-    interface IConfigFileFormatStrategy
+    public interface IConfigFileFormatStrategy
     {
         ConfigDTO Read(string configName);
     }

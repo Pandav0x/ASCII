@@ -35,6 +35,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Config\Contracts\FormatStrategy.cs" />
     <Compile Include="Config\DTO\ConfigConfigDTO.cs" />
     <Compile Include="Config\Utils\ConfigFileFinder.cs" />
     <Compile Include="Config\ConfigManager.cs" />

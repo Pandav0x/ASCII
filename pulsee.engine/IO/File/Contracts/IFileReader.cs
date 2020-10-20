@@ -1,6 +1,6 @@
 ﻿namespace pulsee.engine.IO.File.Contracts
 {
-    interface IFileReader
+    public interface IFileReader
     {
         string GetFileContent(string filePath);
     }

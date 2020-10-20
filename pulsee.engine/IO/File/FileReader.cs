@@ -2,7 +2,7 @@
 
 namespace pulsee.engine.IO.File
 {
-    class FileReader : IFileReader
+    public class FileReader : IFileReader
     {
         public string GetFileContent(string filePath)
         {

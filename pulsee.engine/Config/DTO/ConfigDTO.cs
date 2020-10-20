@@ -2,7 +2,7 @@
 
 namespace pulsee.engine.Config.DTO
 {
-    sealed class ConfigDTO
+    public sealed class ConfigDTO
     {
         public ConfigDTO() { }
 
