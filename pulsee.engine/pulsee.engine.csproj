@@ -53,12 +53,13 @@
     <Compile Include="Events\Contracts\IEventListener.cs" />
     <Compile Include="Events\EventManager.cs" />
     <Compile Include="Game\MainLoop.cs" />
+    <Compile Include="IO\File\Contracts\IFileReader.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Math\Geometry\Point.cs" />
     <Compile Include="Math\Generation\Random.cs" />
     <Compile Include="Pulsee.cs" />
-    <Compile Include="Utils\FileInfo.cs" />
-    <Compile Include="Utils\FileReader.cs" />
+    <Compile Include="IO\File\FileInfo.cs" />
+    <Compile Include="IO\File\FileReader.cs" />
     <Compile Include="Utils\Info.cs" />
     <Compile Include="Utils\ListFinder.cs" />
     <Compile Include="Utils\Reflexion.cs" />

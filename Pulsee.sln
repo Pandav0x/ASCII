@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pulsee.engine", "pulsee.engine\pulsee.engine.csproj", "{1330FCFC-4F1A-4E77-B402-0F83ABC3B6AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pulsee.engine.tests.unit", "pulsee.engine.tests.unit\pulsee.engine.tests.unit.csproj", "{05CCC4A3-696C-4FC9-8AB6-F1DC622C6AE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1330FCFC-4F1A-4E77-B402-0F83ABC3B6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1330FCFC-4F1A-4E77-B402-0F83ABC3B6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1330FCFC-4F1A-4E77-B402-0F83ABC3B6AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CCC4A3-696C-4FC9-8AB6-F1DC622C6AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CCC4A3-696C-4FC9-8AB6-F1DC622C6AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CCC4A3-696C-4FC9-8AB6-F1DC622C6AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CCC4A3-696C-4FC9-8AB6-F1DC622C6AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

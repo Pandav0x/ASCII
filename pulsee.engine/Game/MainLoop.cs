@@ -12,6 +12,8 @@ namespace pulsee.engine.Game
 
         private readonly int msPerUpdate;
 
+        private readonly int maxFPS;
+
         public bool IsLooping
         {
             get { return isLooping; }
@@ -22,13 +24,14 @@ namespace pulsee.engine.Game
         {
             IsLooping = true;
             msPerUpdate = (int)GameContainer.configManager.loadedConfig.Engine.MsPerUpdate;
+            maxFPS = (int)GameContainer.configManager.loadedConfig.Engine.MaxFPS;
         }
 
         public void Run()
         {
             double previous = Time.GetEpochMilliseconds();
 
-            double lag = 0.0d;
+            double updateLag = 0.0d;
 
             do
             {
@@ -36,14 +39,14 @@ namespace pulsee.engine.Game
                 double elapsed = current - previous;
 
                 previous = current;
-                lag += elapsed;
+                updateLag += elapsed;
 
                 ProcessInput();
 
-                while (lag >= msPerUpdate)
+                while (updateLag >= msPerUpdate)
                 {
                     Update();
-                    lag -= msPerUpdate;
+                    updateLag -= msPerUpdate;
                 }
 
                 Render(); //TODO - clamp Render to MAX_FPS in config
